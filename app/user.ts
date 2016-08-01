@@ -4,9 +4,9 @@
 export class User {
     UserName :String
     FirstName :String
-    // LastName: String
-    // Email : String
-    // Password:String
+    LastName: String
+    Email : String
+    Password:String
     // Address:String
     // State:String
     // Country:String

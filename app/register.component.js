@@ -12,22 +12,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by consultadd on 1/8/16.
  */
 var core_1 = require("@angular/core");
-var mock_User_1 = require('./mock_User');
-var router_1 = require('@angular/router');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Registration";
-        this.User = mock_User_1.user;
+var RegisterComponent = (function () {
+    function RegisterComponent() {
+        this.submitted = false;
     }
-    AppComponent = __decorate([
+    RegisterComponent.prototype.onSubmit = function () { this.submitted = true; };
+    Object.defineProperty(RegisterComponent.prototype, "diagnostic", {
+        // TODO: Remove this when we're done
+        get: function () { return JSON.stringify(this.model); },
+        enumerable: true,
+        configurable: true
+    });
+    RegisterComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n     <h1>{{title}}</h1>\n  <nav>\n    <a [routerLink]=\"['/login']\" routerLinkActive=\"active\">SignIn</a>\n    <a [routerLink]=\"['/register']\" routerLinkActive=\"active\">SignUp</a>\n    </nav>\n     <router-outlet></router-outlet>\n  ",
-            directives: [router_1.ROUTER_DIRECTIVES]
+            selector: 'my-register',
+            templateUrl: "app/register.html"
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], RegisterComponent);
+    return RegisterComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.RegisterComponent = RegisterComponent;
+//# sourceMappingURL=register.component.js.map

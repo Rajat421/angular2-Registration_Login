@@ -4,24 +4,22 @@
 import {Component} from "@angular/core"
 import {User} from './user'
 import {user} from './mock_User'
-
-
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
     selector: 'my-app',
     template: `
-                <h1>{{title}}</h1>
-                <nav><ul>
-                <li>SignIn</li>
-                <li>SignUp</li>
-          </ul></nav>
-           <ul><li *ngFor="let USER of User"><span>{{USER.UserName}}</span></li></ul>
-         
-               
-`
+     <h1>{{title}}</h1>
+  <nav>
+    <a [routerLink]="['/login']" routerLinkActive="active">SignIn</a>
+    <a [routerLink]="['/register']" routerLinkActive="active">SignUp</a>
+    </nav>
+     <router-outlet></router-outlet>
+  `,
+    directives: [ROUTER_DIRECTIVES]
 })
 export class AppComponent {
-       title :String = "Registration"
-        User : User[] = user
+    title:String = "Registration";
+    User:User[] = user;
 
-
+}
